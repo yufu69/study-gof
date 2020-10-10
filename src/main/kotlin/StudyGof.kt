@@ -3,12 +3,16 @@ import com.yufutech.hatenablog.gof.adapter.exercises.FileIO
 import com.yufutech.hatenablog.gof.adapter.exercises.FileProperties
 import com.yufutech.hatenablog.gof.iterator.Book
 import com.yufutech.hatenablog.gof.iterator.BookShelf
+import com.yufutech.hatenablog.gof.template.AbstractDisplay
+import com.yufutech.hatenablog.gof.template.CharDisplay
+import com.yufutech.hatenablog.gof.template.StringDisplay
 import java.io.IOException
 
 fun main() {
 //    runIterator()
 //    runAdapter()
-    runAdapterExercises()
+//    runAdapterExercises()
+    runTemplateMethod()
 }
 
 fun runIterator() {
@@ -50,4 +54,16 @@ fun runAdapterExercises() {
     } catch (e: IOException) {
         e.printStackTrace()
     }
+}
+
+fun runTemplateMethod() {
+    val display1 = CharDisplay('A')
+    val display2 = StringDisplay("Hello, World")
+    val display3 = StringDisplay("こんにちは。")
+
+    display1.display()
+    println()
+
+    display2.display()
+    display3.display()
 }
