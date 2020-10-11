@@ -1,6 +1,7 @@
 import com.yufutech.hatenablog.gof.adapter.*
 import com.yufutech.hatenablog.gof.adapter.exercises.FileIO
 import com.yufutech.hatenablog.gof.adapter.exercises.FileProperties
+import com.yufutech.hatenablog.gof.factorymethod.idcard.IDCardFactory
 import com.yufutech.hatenablog.gof.iterator.Book
 import com.yufutech.hatenablog.gof.iterator.BookShelf
 import com.yufutech.hatenablog.gof.template.AbstractDisplay
@@ -12,7 +13,8 @@ fun main() {
 //    runIterator()
 //    runAdapter()
 //    runAdapterExercises()
-    runTemplateMethod()
+//    runTemplateMethod()
+    runFactoryMethod()
 }
 
 fun runIterator() {
@@ -66,4 +68,16 @@ fun runTemplateMethod() {
 
     display2.display()
     display3.display()
+}
+
+fun runFactoryMethod() {
+    val factory = IDCardFactory()
+    val card1 = factory.create("天井ウテナ")
+    val card2 = factory.create("姫宮アンシー")
+    val card3 = factory.create("ディオス")
+
+    card1.use()
+    card2.use()
+    card3.use()
+    println("factory owners ... ${factory.getOwners()}")
 }
